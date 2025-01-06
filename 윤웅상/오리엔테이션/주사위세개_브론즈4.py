@@ -22,21 +22,27 @@
 '''
 input_nums = list(map(int, input().split()))
 
-count = {}
+count = {} # 중복을 처리해야 함 -> dict 자료형의 key는 중복을 허용하지 않음 -> dict을 이용해봐야겠다!
 
 for num in input_nums:
-    e = count.get(num)
-    if not e:
+    exist = count.get(num)
+
+    if not exist:
         count[num] = 1
     else:
         count[num] += 1
 
-if len(count) == 3:
+# 세 개의 수가 모두 다 다른 경우
+if len(count) == 3: 
     print(max(count) * 100)
+
+# 두 개의 수가 겹치는 경우
 elif len(count) == 2:
     for k, v in count.items():
         if v == 2:
             print(1000 + k * 100)
+
+# 세 개의 수가 모두 같은 경우
 elif len(count) == 1:
-    k = count.keys()
+    k = list(count.keys())
     print(10000 + k[0] * 1000)
