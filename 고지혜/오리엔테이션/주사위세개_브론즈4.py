@@ -23,4 +23,4 @@
 
 x = input('숫자 입력:')
 print('dd')
-print('안녕')
+print('hello')
