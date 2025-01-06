@@ -20,3 +20,20 @@
 예제 출력 1 
 1300
 '''
+li = list(map(int,input().split()))
+
+print(li)
+price = 0
+li.sort()
+
+if li[0] == li[1] == li[2]:
+    price = 10000 + li[0] * 1000
+elif li[0] != li[1] != li[2]:
+    price = li[2]*100
+else:
+    if li[0] == li[1]:
+        price = 1000 + li[0]*100
+    else:
+        price = 1000 + li[2]*100
+
+print(price)
