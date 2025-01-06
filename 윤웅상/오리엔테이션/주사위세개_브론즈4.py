@@ -20,3 +20,23 @@
 예제 출력 1 
 1300
 '''
+input_nums = list(map(int, input().split()))
+
+count = {}
+
+for num in input_nums:
+    e = count.get(num)
+    if not e:
+        count[num] = 1
+    else:
+        count[num] += 1
+
+if len(count) == 3:
+    print(max(count) * 100)
+elif len(count) == 2:
+    for k, v in count.items():
+        if v == 2:
+            print(1000 + k * 100)
+elif len(count) == 1:
+    k = count.keys()
+    print(10000 + k[0] * 1000)
