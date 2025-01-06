@@ -21,3 +21,14 @@
 1300
 '''
 # 풀이 코드 작성
+
+dice_number = list(map(int, input("주사위 값을 입력하세요: ").split()))
+
+dice_number.sort()
+
+if dice_number[0] == dice_number[1] == dice_number[2]:
+    print(10000 + dice_number[0] * 1000)
+elif dice_number[0] == dice_number[1] or dice_number[1] == dice_number[2]:
+    print(1000 + dice_number[1] * 100)
+else:
+    print(dice_number[2] * 100)
