@@ -7,10 +7,12 @@ elif a==b or c==a:
 
 elif b==c:
     print(1000+b*100)
-    
+
 else: 
     if a>b and a>c:
         print(a*100)
+
     elif a<b and b>c:
         print(b*100)
+        
     else: print(c*100)
