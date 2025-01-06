@@ -20,3 +20,18 @@
 예제 출력 1 
 1300
 '''
+
+#주사위 값 입력
+num1, num2, num3 = input("주사위 값을 입력하세요: ").split()
+
+#상금 초기값 설정
+money = 0
+
+if (num1 != num2) and (num2 != num3) and (num3 != num1):
+    if (num1 > num2) and (num1 > num3):
+        money = num1 * 100
+    if (num2 > num1) and (num2 > num3):
+        money = num2 * 100
+    if (num3 > num1) and (num3 > num2):
+        money = num3 * 100
+elif
