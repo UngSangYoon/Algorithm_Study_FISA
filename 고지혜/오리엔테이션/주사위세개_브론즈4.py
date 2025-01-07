@@ -20,7 +20,26 @@
 예제 출력 1 
 1300
 '''
+try:
+  x = list(map(int, input('숫자 3개 입력(ex. 3 2 2): ').split()))  # ValueError: invalid literal for int() with base 10: 'd'
 
-x = input('숫자 입력:')
-print('dd')
-print('hello')
+  if x[0] == x[1] == x[2]:
+    # 같은 눈이 3개 나오면 10,000원+(같은 눈)*1,000원
+    prize = 10000 + x[0] * 1000
+  # 같은 눈 2개만 나올 떄
+  elif x[0] == x[1] or x[0] == x[2]:  # 1 1 2 / 1 2 1 / 1 2 2
+    prize = 1000 + x[0] * 100
+  elif x[1] == x[2]:
+    prize = 1000 + x[1] * 100
+  else: 
+    # 3개 다 눈이 다르면 가장 큰 눈*100원
+    prize = max(x) * 100
+  
+  print(f'상금: {prize}원')
+
+except ValueError:
+  print('숫자를 입력해주세요.')
+except IndexError:
+  print('숫자 3개를 입력해주세요.')
+except Exception as e:  
+  print(e)
