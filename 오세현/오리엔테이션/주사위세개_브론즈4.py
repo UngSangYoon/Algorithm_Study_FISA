@@ -52,4 +52,4 @@ else:
     money = 10000 + num1 * 1000
 
 #상금 출력
-print(f'상금은 {money}원 입니다!')
+print(f'상금은 {money}원!')
