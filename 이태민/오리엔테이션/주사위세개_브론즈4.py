@@ -20,7 +20,7 @@
 예제 출력 1 
 1300
 '''
-a, b, c = map(int, input('주사위 숫자 3개를 입력하세요: ').split())
+a, b, c = map(int, input('주사위 숫자 3개를 입력하세요(1~6사이): ').split())
 if a == b == c:
     print(10000 + a*1000)
 elif a == b or a == c:

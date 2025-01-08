@@ -25,7 +25,7 @@
 num1, num2, num3 = input("주사위 값을 입력하세요: ").split()
 
 #형 변환
-num1 = int(num1)
+num1 = float(num1)
 num2 = int(num2)
 num3 = int(num3)
 
@@ -49,7 +49,8 @@ elif  (num1 == num3) and (num1 != num2):
     money = 1000 + num1 * 100
 #셋 다 같은 경우
 else:
-    money = 10000 + num1 * 1000
+    test_code_commit = 1
 
 #상금 출력
-print(f'상금은 {money}원 입니다!')
+print(f'상금은 {money}!')
+
