@@ -11,4 +11,5 @@ def factorial(n):
 n = int(input("숫자 N 을 입력해주시오. (0 ≤ N ≤ 20): "))
 
 factorial_result = factorial(n)
+
 print(factorial_result)
