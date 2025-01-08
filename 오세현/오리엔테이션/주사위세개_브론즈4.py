@@ -49,7 +49,7 @@ elif  (num1 == num3) and (num1 != num2):
     money = 1000 + num1 * 100
 #셋 다 같은 경우
 else:
-    test_code
+    test_code_commit = 1
 
 #상금 출력
 print(f'상금은 {money}!')
