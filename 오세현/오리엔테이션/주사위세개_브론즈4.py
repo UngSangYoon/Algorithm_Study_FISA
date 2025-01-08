@@ -53,3 +53,4 @@ else:
 
 #상금 출력
 print(f'상금은 {money}!')
+
