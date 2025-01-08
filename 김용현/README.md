@@ -1,1 +1,1 @@
-[solved주소](https://solved.ac/profile/aoukace)
+[김용현의 solved] (https://solved.ac/profile/aoukace)
