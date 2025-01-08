@@ -1,5 +1,3 @@
-print('ehlsms')
-
 a, b = map(int, input().split())
 
 # 유클리드 호제법 사용
