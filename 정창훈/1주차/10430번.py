@@ -18,13 +18,10 @@ if 2 > A:
 elif C > 10000:
     print('C의 값은 반드시 10000 이하 이여야합니다.')
 else:
+    
 
-    answer1 = (A + B) % C
-    answer2 = ((A % C) + (B % C)) % C
-    answer3 = (A * B) % C
-    answer4 = ((A % C) * (B % C)) % C
-
-print(answer1)
-print(answer2)
-print(answer3)
-print(answer4)
+    print((A + B) % C)
+    print(((A % C) + (B % C)) % C)
+    print((A * B) % C)
+    print(((A % C) * (B % C)) % C)
+    
