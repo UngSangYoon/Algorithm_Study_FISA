@@ -20,31 +20,33 @@
 예제 출력 1 
 1300
 '''
-input_nums = list(map(int, input().split()))
 
-count = {} # 중복을 처리해야 함 -> dict 자료형의 key는 중복을 허용하지 않음 -> dict을 이용해봐야겠다!
+import random
 
-for num in input_nums:
-    exist = count.get(num)
+a = random.randint(1, 6)
+b = random.randint(1, 6)
+c = random.randint(1, 6)
 
-    if not exist:
-        count[num] = 1
+print(a, b, c)
+
+if a == b:
+    if a == c:
+        print(10000 + a*1000)
     else:
-        count[num] += 1
+        print(1000 + a*100)
+else:
+    if a == c:
+        print(1000 + a*100)
+    else:
+        if a > b:
+            if a > c:
+                print(a * 100)
+            else:
+                print(c*100)
+        else: # c>a
+            if c > b:
+                print(c*100)
+            else:
+                print(b*100)
 
-# 세 개의 수가 모두 다 다른 경우
-if len(count) == 3: 
-    print(max(count) * 100)
-
-# 두 개의 수가 겹치는 경우
-elif len(count) == 2:
-    for k, v in count.items():
-        if v == 2:
-            print(1000 + k * 100)
-
-# 세 개의 수가 모두 같은 경우
-elif len(count) == 1:
-    k = list(count.keys())
-    print(10000 + k[0] * 1000)
-
-# 구냥 조건 분기 하면 되는거 아닌가요? 
+    
