@@ -13,4 +13,6 @@ print(((a%c)+(b%c))%c)
 print((a*b)%c)
 
 #((A%C)x(B%C))%C
+
 print(((a%c)*(b%c))%c)
+
