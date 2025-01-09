@@ -20,32 +20,3 @@
 예제 출력 1 
 1300
 '''
-
-#주사위 값 입력
-a = input().split()
-#형 변환
-for i in range(3):
-  a[i] = int(a[i])
-
-#상금 초기값 설정
-money = 0
-
-#셋 다 같은 경우
-if a[0] == a[1] == a[2]:
-    money = 10000 + a[0] * 1000
-
-#두 개만 같은 경우
-elif (a[0] == a[1]) and (a[0] != a[2]):
-  money = 1000 + a[0] * 100
-elif (a[0] == a[2]) and (a[0] != a[1]):
-  money = 1000 + a[0] * 100
-elif (a[1] == a[2]) and (a[1] != a[0]):
-  money = 1000 + a[1] * 100
-
-#셋 다 다른 경우
-else:
-  money = max(a) * 100
-
-#상금 출력
-print(money)
-

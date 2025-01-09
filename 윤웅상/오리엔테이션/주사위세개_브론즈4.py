@@ -46,3 +46,5 @@ elif len(count) == 2:
 elif len(count) == 1:
     k = list(count.keys())
     print(10000 + k[0] * 1000)
+
+# 구냥 조건 분기 하면 되는거 아닌가요? 
