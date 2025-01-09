@@ -28,17 +28,17 @@ for i in range(1, n+1):
 		li.append(i)
 print(sum(li))
 '''
-# 18 2
-# 16
-# 1 2 4 4 8 16
-# 6 % i = 0
-# 1 2 3 6
+
+# 16 4
+# 16 % i = 4
+# 12 % i = 0
 # 16 % i = 4 인 i 를 찾아야하자나
 # 그렇다면 (16 - 4) % i = 0
 # (n -r) 의 약수를 후보로 순회해보자!
 # 12 의 약수 -> 1, 2, 3, 4, 6, 12
 # r 보다 작은 약수는 나머지 연산 결과 r보다 작은 값을 반환하게 된다
 
+'''
 n, r = map(int, input().split())
 x = n -r
 li = []
@@ -50,3 +50,21 @@ for i in range(1, int(x**(1/2)) + 1):
 li = list(filter(lambda t:t > r, li))
 
 print(sum(li))
+'''
+
+# 위 코드가 틀린 이유
+# 16 의 약수 -> [1, 16, 2, 8, 4, 4]
+# 제곱수 중복 처리가 안됨!!
+# 중복을 허용하지 않는 set을 사용하자
+
+n, r = map(int, input().split())
+x = n -r
+s = set()
+for i in range(1, int(x**(1/2)) + 1):
+    if x % i == 0:
+        s.add(i)
+        s.add(x//i)
+
+ans = list(filter(lambda t:t > r, s))
+
+print(sum(ans))
