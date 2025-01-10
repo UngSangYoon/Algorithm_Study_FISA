@@ -23,17 +23,17 @@ n = map(int, input().split())
 
 numbers = list(map(int, input().split()))
 
-def p(num):
-    if num < 2:
+def p(n):
+    if n < 2:
         return 0
-    for i in range(2, int(sqrt(num)) + 1):
-        if num % i == 0:
+    for i in range(2, int(sqrt(n)) + 1):
+        if n % i == 0:
             return 0
     return 1
 
 count = 0
-for num in numbers:
-    if p(num):
+for n in numbers:
+    if p(n):
         count += 1
 
 print(count)
