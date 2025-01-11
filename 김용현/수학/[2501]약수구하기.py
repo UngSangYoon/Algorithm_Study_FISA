@@ -35,6 +35,11 @@
 1
     
 """
+
+
+
+
+"""처음 푼 방법 : 시간복잡도 O(N)"""
 def common_divisor(N):
     arr=[]
     
@@ -45,12 +50,24 @@ def common_divisor(N):
     return arr
 
 
+"""두번째로 푼 방법 : 시간복잡도 O(N**0.5)"""
+def common_divisor_ver2(N):
+    arr = []
+    for i in range(1, int(N**0.5) + 1):  
+        if N%i==0: 
+            arr.append(i)  
+            if i!=N // i:  #
+                arr.append(N // i)
+    arr.sort()
+    
+    return arr
+
 
 
 N, K =map(int, input().split())
 
-arr = common_divisor(N)
-print(arr)
+arr = common_divisor_ver2(N)
+
 if len(arr) < K :
     print("0")
 else :
