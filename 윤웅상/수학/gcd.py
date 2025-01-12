@@ -6,9 +6,9 @@ def gcd(a,b):
 		return a
 	return gcd(b, a%b)
 
-def lcd(a,b,gcd):
+def lcm(a,b,gcd):
 	return a*b//gcd
 
 g = gcd(a,b)
 print(g)
-print(lcd(a,b,g))
+print(lcm(a,b,g))
