@@ -57,4 +57,4 @@ def get_divisors(n, k):
     else:
         return sum(s)
 
-print(get_divisors(n, k))
+print(get_divisors(n, k)) 
