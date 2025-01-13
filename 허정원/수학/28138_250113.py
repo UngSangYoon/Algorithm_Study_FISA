@@ -53,7 +53,7 @@ def get_divisors(n, k):
                 s.add((n-k)//i)
 
     if not s:
-        return 0
+        return 0 
     else:
         return sum(s)
 
