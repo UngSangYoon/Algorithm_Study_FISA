@@ -1,6 +1,5 @@
 '''
-소수 찾기 - 1978
-
+문제
 주어진 수 N개 중에서 소수가 몇 개인지 찾아서 출력하는 프로그램을 작성하시오.
 
 입력
@@ -9,31 +8,26 @@
 출력
 주어진 수들 중 소수의 개수를 출력한다.
 
-예제 입력
+예제 입력 1 
 4
 1 3 5 7
-
-예제 출력
+예제 출력 1 
 3
 '''
+import math
 
-from math import sqrt
+N=int(input())
 
-n = map(int, input().split())
+Nlist=list(map(int,input().split(' ')))
+answer=0
 
-numbers = list(map(int, input().split()))
-
-def p(n):
-    if n < 2:
-        return 0
-    for i in range(2, int(sqrt(n)) + 1):
+for n in Nlist :
+    if n==1 :
+        continue
+    for i in range(2,int(math.sqrt(n))+1):
         if n % i == 0:
-            return 0
-    return 1
+            break
+    else : 
+        answer+=1
 
-count = 0
-for n in numbers:
-    if p(n):
-        count += 1
-
-print(count)
+print(answer)  
