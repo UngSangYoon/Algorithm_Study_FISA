@@ -24,7 +24,7 @@ def fibo(n):
     return arr[n]
 
 n = int(input())
-arr = [-1] * (n+1)
+arr = [-1] * (n + 2) # n = 0 입력받았을 때 arr[1]에 접근하기 위해
 arr[0] = 0
 arr[1] = 1
 print(fibo(n))
