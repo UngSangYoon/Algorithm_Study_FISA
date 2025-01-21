@@ -21,32 +21,20 @@
 1300
 '''
 
-import random
-
-a = random.randint(1, 6)
-b = random.randint(1, 6)
-c = random.randint(1, 6)
-
-print(a, b, c)
+a, b, c = map(int, input().split())
 
 if a == b:
     if a == c:
         print(10000 + a*1000)
+    
     else:
         print(1000 + a*100)
 else:
-    if a == c:
+    if a  == c:
         print(1000 + a*100)
     else:
-        if a > b:
-            if a > c:
-                print(a * 100)
-            else:
-                print(c*100)
-        else: # c>a
-            if c > b:
-                print(c*100)
-            else:
-                print(b*100)
-
+        if b ==c:
+            print(1000 + b*100)
+        else:
+            print(max(a, b, c)*100)
     
