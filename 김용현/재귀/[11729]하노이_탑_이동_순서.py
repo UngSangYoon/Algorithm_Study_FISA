@@ -1,3 +1,6 @@
+
+
+
 def hanoi(n, a, b, c):
     if n == 1:
         print(f"{a} {c}")
