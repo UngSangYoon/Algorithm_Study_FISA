@@ -35,7 +35,6 @@ ____라고 답변하였지.
 라고 답변하였지.
 '''
 
-cnt=int(input())
 print("어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.")
 
 def chatbot(cnt,n):
@@ -51,4 +50,4 @@ def chatbot(cnt,n):
     print("____" * n + "라고 답변하였지.")
 
 
-chatbot(cnt,0)
+chatbot(int(input()),0)
