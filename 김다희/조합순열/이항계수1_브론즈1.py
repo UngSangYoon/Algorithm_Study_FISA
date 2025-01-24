@@ -1,4 +1,4 @@
-from math import prod # 리스트 내부 원소들의 곱
+from math import prod # 리스트 내부 원소들의 곱하기기...
 
 num = list(range(1,11))
 
