@@ -23,6 +23,22 @@ N보다 작거나 같은 자연수 중에서, 집합 K의 원소로만 구성된
 
 from itertools import product
 
-N, K = map(int,input().split(' '))
-Klist=sorted(list(map(int,input().split(' '))),reverse=True)
+N , k = map(int, input().split())
 
+number=list(map(int, input().split()))
+
+result=[]
+
+length= len(str(N))
+# product 중복순열, repeat= 꼭 필요!
+while True:
+    for num in product(number, repeat=length):
+        tmp = ''.join(map(str,num))
+        if N >= int(tmp):
+            result.append(tmp)
+
+    if result : 
+        print(max(result))
+        break
+    else :
+        length-=1
