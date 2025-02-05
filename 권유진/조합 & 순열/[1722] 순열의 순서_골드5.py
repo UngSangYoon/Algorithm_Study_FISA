@@ -20,7 +20,7 @@ k번째 수열을 나타내는 N개의 수를 출력하거나, 몇 번째 수열
 '''
 
 # 시간초과
-
+'''
 from itertools import permutations
 
 N = int(input())
@@ -47,3 +47,7 @@ else:
         if per == p:
             print(i + 1)
             break
+'''
+
+# 진행 중
+
