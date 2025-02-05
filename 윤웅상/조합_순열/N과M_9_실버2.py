@@ -36,29 +36,27 @@ N개의 자연수 중에서 M개를 고른 수열
 예제 출력 3 
 1 1 1 1
 '''
-N , M = map(int, input().split())
+N, M = map(int, input().split())
 lst = list(map(int, input().split()))
-lst.sort()
-check = [False] * N # 원소 사용 여부를 체크
+lst.sort()  # 입력된 숫자를 사전 순으로 정렬
+
 choose = []
+visited = [False] * N  # 각 숫자의 방문 여부를 기록
 
 def permutation(level):
-	if level == M:
-		# 나열한 R 개의 원소를 출력
-		print(*choose)
-		return
+    if level == M:
+        print(*choose)
+        return
 
-	# for문
-	for i in range(0, N):
-		if check[i] == True: # 인덱스가 i인 원소가 이미 사용중이라면 continue
-			continue
-
-		choose.append(lst[i]) # 인덱스가 i인 원소를 선택(추가) 
-		check[i] = True # 인덱스가 i인 원소를 사용하고 있으므로 true로 초기화
-
-		permutation(level+1) # 다음 for 문으로 들어가는 역할
-
-		check[i] = False # 인덱스가 i인 원소의 사용이 끝났으므로 false로 초기화
-		choose.pop() # (넣었던) 인덱스가 i인 원소를 제거
+    prev = -1  # 같은 숫자가 연속으로 선택되는 것을 방지하기 위해 이전 숫자 저장
+    for i in range(N):
+        # 방문하지 않았고, 이전 숫자와 다를 때만 선택
+        if not visited[i] and lst[i] != prev:
+            visited[i] = True  # 현재 숫자를 방문 처리
+            choose.append(lst[i])
+            prev = lst[i]  # 이전 숫자를 갱신
+            permutation(level + 1)
+            visited[i] = False  # 백트래킹
+            choose.pop()
 
 permutation(0)
