@@ -41,7 +41,7 @@ lst = list(map(int, input().split()))
 lst.sort()  # 입력된 숫자를 사전 순으로 정렬
 
 choose = []
-visited = [False] * N  # 각 숫자의 방문 여부를 기록
+check = [False] * N  # 각 숫자의 방문 여부를 기록
 
 def permutation(level):
     if level == M:
@@ -51,12 +51,12 @@ def permutation(level):
     prev = -1  # 같은 숫자가 연속으로 선택되는 것을 방지하기 위해 이전 숫자 저장
     for i in range(N):
         # 방문하지 않았고, 이전 숫자와 다를 때만 선택
-        if not visited[i] and lst[i] != prev:
-            visited[i] = True  # 현재 숫자를 방문 처리
+        if not check[i] and lst[i] != prev:
+            check[i] = True  # 현재 숫자를 방문 처리
             choose.append(lst[i])
             prev = lst[i]  # 이전 숫자를 갱신
             permutation(level + 1)
-            visited[i] = False  # 백트래킹
+            check[i] = False  # 백트래킹
             choose.pop()
 
 permutation(0)
