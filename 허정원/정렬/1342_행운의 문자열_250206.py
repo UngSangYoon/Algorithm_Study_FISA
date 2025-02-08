@@ -8,7 +8,7 @@
 출력
 첫째 줄에 위치를 재배치해서 얻은 서로 다른 행운의 문자열의 개수를 출력한다.
 '''
-
+# 1 메모리 초과
 import itertools
 s = input()
 # permutations = set(itertools.permutations(s))
@@ -30,3 +30,27 @@ for perm in itertools.permutations(sorted(s)):
         done.add(perm)
 
 print(total_cnt)
+
+# 2 강의코드
+from itertools import permutations
+
+def fact(x):
+	if x == 0:
+		return 1
+	return fact(x - 1) * x
+
+S = input()
+ans = 0
+
+for perm in permutations(S):
+	ok = True
+	for i in range(0, len(S) - 1):
+		if perm[i] == perm[i + 1]:
+			ok = False
+			break
+	ans += ok
+
+for i in range(ord('a'), ord('z') + 1):
+	ans //= fact(S.count(chr(i)))
+
+print(ans)
