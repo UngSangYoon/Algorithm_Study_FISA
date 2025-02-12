@@ -1,37 +1,27 @@
-num = int(input())
-list_ = []
+from itertools import permutations
 
-for _ in range(num):
-    list_.append(tuple(input().split()))
+N = int(input())
+infos = [input().split() for _ in range(N)]
+ans = 0
 
-list_ = [(entry[0], int(entry[1]), int(entry[2])) for entry in list_]
+for cur in permutations(range(1, 10), 3):
+    ok = True
 
-def count_possible_numbers_bruteforce(conditions):
-    count = 0
+    for num, st, bl in infos:
+        cur_st = cur_bl = 0
 
-    for i in range(1, 1000):
-        num_str = f"{i:03d}"  
-        valid = True
+        for i in range(3):
+            if str(cur[i]) == num[i]:
+                cur_st += 1
+            elif str(cur[i]) in num:
+                cur_bl += 1
 
-        for cond_num, strikes, balls in conditions:
-            if strikes == 0 and balls == 0:
-                if any(c in num_str for c in cond_num):  
-                    valid = False
-                    break 
-            
-            else:
-                strike_count = sum(num_str[j] == cond_num[j] for j in range(3))
-                ball_count = sum((c in num_str) for c in cond_num) - strike_count
+        if cur_st != int(st) or cur_bl != int(bl):
+            ok = False
+            break
 
-                if strike_count != strikes or ball_count != balls:
-                    valid = False
-                    break 
+    if ok:
+        ans += 1
 
-        if valid:
-            if any(strikes == 3 for _, strikes, _ in conditions):
-                return 1 
-            count += 1
-
-    return count
-
-print(count_possible_numbers_bruteforce(list_))
+print(ans)  
+#####

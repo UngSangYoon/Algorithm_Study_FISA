@@ -22,6 +22,6 @@ for i in range(1, 11):
 result.sort()
 
 try:
-    print(result[N])
+    print(result[:15])
 except:
     print(-1)
