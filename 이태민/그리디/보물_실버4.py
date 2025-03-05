@@ -30,3 +30,17 @@ A와 B의 각 원소는 100보다 작거나 같은 음이 아닌 정수이다.
 예제 출력 1 
 18
 '''
+
+n = int(input())  # 입력받는 정수 n
+
+a = list(map(int, input().split()))  # 첫 번째 리스트 입력
+b = list(map(int, input().split()))  # 두 번째 리스트 입력
+
+# a를 오름차순 정렬, b를 내림차순 정렬
+a.sort()
+b.sort(reverse=True)
+
+# 두 리스트의 각 요소를 곱하고 합산
+result = sum(x * y for x, y in zip(a, b))
+
+print(result)  # 결과 출력
