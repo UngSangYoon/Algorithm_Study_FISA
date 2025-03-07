@@ -23,11 +23,12 @@ def solution(li_, n):
             li_[i] -= count
             li_[i+1] -= count
 
-        # 남은 개수만큼 개별 구매 (3원)
         ans += li_[i] * 3
-        li_[i] = 0  # 구매 완료
+        li_[i] = 0 
 
     return ans
+
+    #####
 
 
 
