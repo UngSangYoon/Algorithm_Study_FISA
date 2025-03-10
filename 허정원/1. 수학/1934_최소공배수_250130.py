@@ -1,6 +1,3 @@
-'''
-'''
-
 import math
 
 def lcm(a, b):
