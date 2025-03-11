@@ -21,6 +21,26 @@ N이 주어질 때, 길이가 N인 계단 수가 총 몇 개 있는지 구해보
 예제 출력 2 
 17
 '''
+# 정답
+N = int(input())
+
+# dp 테이블 0 ~ 9
+dp = [[0]*10 for _ in range(N)]
+
+# 초기화
+for i in range(1, 10):
+    dp[0][i] = 1
+
+# n : 자리수, K 마지막 숫자
+for n in range(1, N):
+    dp[n][0] = dp[n-1][1]
+    dp[n][9] = dp[n-1][8]
+    
+    for k in range(1, 9):
+        dp[n][k] = dp[n-1][k-1] + dp[n-1][k+1]
+
+print(sum(dp[N-1])%1000000000)
+
 
 # 시간 초과
 class TreeNode:
