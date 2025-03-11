@@ -21,6 +21,7 @@
 N = int(input())
 arr = [0] + list(map(int, input().split()))
 
+# dp[n] : n에서 끝나는 LIS 길이
 dp = [-1 for _ in range(N + 1)]
 
 # 초기값 처리
