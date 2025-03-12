@@ -18,6 +18,7 @@
 10
 5
 '''
+'''
 # 미래에 언젠가 오른다면 무조건 사야함 / 떨어지기만 한다면 무조건 팔아야함
 # 전체 리스트에서 오르는 부분의 서브리스트 구성
 # ex) [1, 1, 3, 1, 2] -> [[1, 1, 3], [1, 2]]
@@ -59,3 +60,18 @@ for _ in range(T):
             for j in range(len(i)-1):
                 ans += i[-1] - i[j]
     print(ans)
+
+'''
+
+T = int(input())
+for _ in range(T):
+    N = int(input())
+    prices = list(map(int, input().split()))
+    max_price = 0
+    profit = 0
+    for i in range(N-1, -1, -1):
+        if prices[i] < max_price:
+            profit += max_price - prices[i]
+        else:
+            max_price = prices[i]
+    print(profit)
