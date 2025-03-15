@@ -1,4 +1,5 @@
 # 2579
+# 품
 '''
 계단 오르는 데는 다음과 같은 규칙이 있다.
 
@@ -12,23 +13,27 @@
 
 import sys
 
-k = int(input())
-array = []
+input = sys.stdin.readline
 
-for i in range(k):
-    array.append(list(map(int,sys.stdin.readline().split())))
-array = [lst + [0] for lst in array]
-print(array)
-answer = array
+k = int(input().strip())
 
-for i in range(2,k):
-    if answer[i-1][1] != 1:
-        if answer[i-1][0] > answer[i-2][0]:
-            answer[i][0] += answer[i-1][0]
-            answer[i][1] = 1
-        else :
-            answer[i][0] += answer[i-2][0]
-    else :
-        answer[i][0] += answer[i-2][0]
+if k == 0:
+    print(0)
+    exit()
 
-print(answer[-1][0])
+array = [0] * (k + 1)
+for i in range(1, k + 1):
+    array[i] = int(input().strip())
+
+dp = [0] * (k + 1)
+
+dp[1] = array[1]
+if k > 1:
+    dp[2] = array[1] + array[2]
+if k > 2:
+    dp[3] = max(array[1] + array[3], array[2] + array[3])
+
+for i in range(4, k + 1):
+    dp[i] = max(dp[i - 3] + array[i - 1] + array[i], dp[i - 2] + array[i])
+
+print(dp[k])
