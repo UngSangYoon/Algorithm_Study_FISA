@@ -16,11 +16,11 @@
 '''
 T = int(input())
 
-for _ in range(T):
-    k = int(input())
-    n = int(input())
-    all = [i for i in range(1, n+1)]
-    for _ in range(k):
-        for i in range(1, n):
-            all[i] += all[i-1]
-    print(all[-1])
+for _ in range(T): # T번 반복
+    k = int(input()) # 층
+    n = int(input()) # 호
+    all = [i for i in range(1, n+1)] # 0층의 i호에는 i명이 산다.
+    for _ in range(k): # k층까지 반복
+        for i in range(1, n): # 1호부터 n-1호까지 반복
+            all[i] += all[i-1] # i호에 사는 사람 수는 i-1호까지 사는 사람 수의 합
+    print(all[-1]) # n호에 사는 사람 수 출력
