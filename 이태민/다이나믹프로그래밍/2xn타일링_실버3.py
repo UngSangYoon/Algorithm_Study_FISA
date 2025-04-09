@@ -13,15 +13,9 @@
 첫째 줄에 2×n 크기의 직사각형을 채우는 방법의 수를 10,007로 나눈 나머지를 출력한다.
 '''
 
-# 풀이
-# 점화식을 이용하여 풀이
-def solution(n):
-    dp = [0] * (n+1)
-    dp[1] = 1
-    dp[2] = 2
-    for i in range(3, n+1):
-        dp[i] = (dp[i-1] + dp[i-2]) % 10007
-    return dp[n]
-
 n = int(input())
-print(solution(n))
+temp = {}
+temp[0], temp[1], temp[2] = 1, 1, 2
+for i in range(3, n + 1):
+    temp[i] = (temp[i - 1] + temp[i - 2]) % 10007
+print(temp[n])
